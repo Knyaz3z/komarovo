@@ -1,9 +1,8 @@
 import './serviceCard.scss'
-import {useState} from "react";
+import { useState } from "react";
 import Button from "@/components/Button/Button";
 
-function serviceCard() {
-
+function ServiceCard() {
     const servicesArr = [
         {
             title: 'Баня',
@@ -25,64 +24,48 @@ function serviceCard() {
             list: ['Панорамный вид', 'Гриль', 'Барбекю зона'],
             imgLink: '/services_card_4.png'
         },
-    ]
+    ];
 
     return (
         <div className='services__wrapper'>
             <div className="services container">
-                {
-                    servicesArr.map((service, index) => (
-                        <CardItem
-                            title={service.title}
-                            list={service.list}
-                            img={service.imgLink}
-                        />
-                    ))
-                }
+                {servicesArr.map((service, index) => (
+                    <CardItem
+                        key={index}
+                        title={service.title}
+                        list={service.list}
+                        img={service.imgLink}
+                    />
+                ))}
             </div>
-
-
         </div>
-    )
-
-    function CardItem({title, list, img}) {
-        const [isHovered, setIsHovered] = useState(false)
-
-        return (
-            <div className='card'
-                 onMouseEnter={() => setIsHovered(true)}
-                 onMouseLeave={() => setIsHovered(false)}
-            >
-
-                <div className={`card__image ${isHovered ? 'hovered' : ''}`}>
-                    <img src={img} alt=""/>
-                </div>
-
-                <div className="card__content">
-                    <h3 className='card__title' id={`ser_title ${isHovered ? 'hovered' : ''}`}>{title}</h3>
-
-                    <div className="card__inner">
-                        <ul className={`card__list ${isHovered ? 'hovered' : ''}`}>
-                            {
-                                isHovered ? (
-                                    list.map((list, index) => (
-                                        <li>{list}</li>
-                                    ))
-                                ) : ('')
-
-                            }
-                        </ul>
-
-                        <Button>Подробнее</Button>
-                    </div>
-
-                </div>
-
-
-            </div>
-        )
-    }
+    );
 }
 
+function CardItem({ title, list, img }) {
+    const [isHovered, setIsHovered] = useState(false);
 
-export default serviceCard
+    return (
+        <div
+            className={`card ${isHovered ? 'hovered' : ''}`}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            <div className="card__image">
+                <img src={img} alt={title} />
+                <h3 className="card__title">{title}</h3>
+            </div>
+
+            <div className="card__content">
+                <ul className="card__list">
+                    {list.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))}
+                </ul>
+                <Button>Подробнее</Button>
+            </div>
+        </div>
+    );
+}
+
+export default ServiceCard;
