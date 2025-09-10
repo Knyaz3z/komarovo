@@ -51,6 +51,13 @@ function Prices() {
     ]
 
     const [activePage, setActivePage] = useState(1)
+    const [activeImage, setActiveImage] = useState()
+
+    console.log(activeImage);
+
+    function handleActiveImage(id){
+        setActiveImage(id)
+    }
 
     function changePage(page) {
         setActivePage(page)
@@ -77,12 +84,12 @@ function Prices() {
 
                 <div className="prices__content">
                     <div className="prices__gallery">
-                            <img className="gallery-big" src="/hero_image_1.webp" alt=""/>
+                            <img onClick={()=>handleActiveImage(1)} className="gallery-big" src="/hero_image_1.webp" alt=""/>
 
                         <div className="gallery-small">
-                            <img src="/hero_image_1.webp" alt=""/>
-                            <img src="/hero_image_1.webp" alt=""/>
-                            <img src="/hero_image_1.webp" alt=""/>
+                            <img onClick={()=>handleActiveImage(2)} src="/hero_image_1.webp" alt=""/>
+                            <img onClick={()=>handleActiveImage(3)} src="/hero_image_1.webp" alt=""/>
+                            <img onClick={()=>handleActiveImage(4)} src="/hero_image_1.webp" alt=""/>
                         </div>
                     </div>
 
@@ -95,8 +102,8 @@ function Prices() {
                         </ul>
                         <p className="prices__price">{activeItem.price} Br / час</p>
                         <div className="prices__buttons">
-                            <Button filled>Забронировать</Button>
-                            <Button outlined>Есть вопрос?</Button>
+                            <Button>Забронировать</Button>
+                            <Button variant={'secondary'}>Есть вопрос?</Button>
                         </div>
                     </div>
                 </div>
