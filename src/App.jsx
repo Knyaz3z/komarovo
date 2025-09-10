@@ -5,6 +5,7 @@ import Hero from "@/home/Hero/Hero";
 import Rest from "@/home/Rest/Rest";
 import ServiceCard from "@/home/serviceCard/serviceCard";
 import About from "@/home/About/About";
+import Prices from "@/home/Prices/Prices";
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
                 <About/>
                 <Rest/>
                 <ServiceCard/>
-
+                <Prices/>
             </main>
 
         </>
