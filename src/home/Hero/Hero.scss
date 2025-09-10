@@ -19,6 +19,7 @@
   }
   &__head {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
     margin-top: get-spacing(8);
@@ -32,6 +33,14 @@
     transform: translateY(40px); // чтобы не мигала
     animation: slideUp 0.8s ease forwards;
     animation-delay: 0.2s;
+
+    & span{
+      display: block; /* чтобы выглядело как подзаголовок */
+      font-size: get-font-size(heading-sm);
+      padding-bottom: get-spacing(5);
+      font-weight: 400;
+      color: get-color(headings);
+    }
 
     @include tablet {
       font-size: get-font-size(heading-md);
