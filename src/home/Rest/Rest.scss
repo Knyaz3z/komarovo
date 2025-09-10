@@ -7,11 +7,11 @@
   text-align: center;
 
   h2 {
+    margin-top: get-spacing(5);
     font-size: get-font-size(heading-md);
     font-weight: $font-weight-medium;
     color: get-color(headings);
     line-height: map-get($line-heights, tight);
-    margin-bottom: get-spacing(8);
     text-wrap: balance;
 
     @include tablet {
@@ -39,7 +39,7 @@
     }
 
     @include tablet {
-      max-width: 500px;
+      max-width: 100%;
     }
 
     @include mobile {

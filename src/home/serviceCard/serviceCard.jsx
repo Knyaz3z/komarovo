@@ -1,5 +1,5 @@
 import './serviceCard.scss'
-import { useState } from "react";
+import {useState} from "react";
 import Button from "@/components/Button/Button";
 
 function ServiceCard() {
@@ -7,22 +7,22 @@ function ServiceCard() {
         {
             title: 'Баня',
             list: ['Русская баня', 'Услуги банщика', 'Баня на дровах'],
-            imgLink: '/services_card_1.png'
+            imgLink: '/services_card_1.webp'
         },
         {
             title: 'Беседка',
             list: ['Шампура и решетка', 'Свежий воздух', 'Угли можно приобрести'],
-            imgLink: '/services_card_2.png'
+            imgLink: '/services_card_2.webp'
         },
         {
             title: 'Банкетный зал',
             list: ['Банкетное меню', 'Организация', 'Музыка'],
-            imgLink: '/services_card_3.png'
+            imgLink: '/services_card_3.webp'
         },
         {
             title: 'Веранда',
             list: ['Панорамный вид', 'Гриль', 'Барбекю зона'],
-            imgLink: '/services_card_4.png'
+            imgLink: '/services_card_4.webp'
         },
     ];
 
@@ -42,7 +42,7 @@ function ServiceCard() {
     );
 }
 
-function CardItem({ title, list, img }) {
+function CardItem({title, list, img}) {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
@@ -50,19 +50,20 @@ function CardItem({ title, list, img }) {
             className={`card ${isHovered ? 'hovered' : ''}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
+            onClick={() => setIsHovered(!isHovered)}
         >
-            <div className="card__image">
-                <img src={img} alt={title} />
+            <div className={`card__image ${isHovered ? 'hovered' : ''}`}>
+                <img width={'300'} height={'400'} src={img} alt={title}/>
                 <h3 className="card__title">{title}</h3>
             </div>
 
-            <div className="card__content">
+            <div className={`card__content ${isHovered ? 'hovered' : ''}`}>
                 <ul className="card__list">
                     {list.map((item, index) => (
                         <li key={index}>{item}</li>
                     ))}
                 </ul>
-                <Button>Подробнее</Button>
+                <Button size={'small'}>Подробнее</Button>
             </div>
         </div>
     );

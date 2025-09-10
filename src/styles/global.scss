@@ -104,7 +104,7 @@ $border-widths: (
 
 // ===== SHADOWS =====
 $shadows: (
-        subtle: 0 2px 4px rgba(0, 0, 0, 0.1),
+        subtle: 0 4px 4px rgba(0, 0, 0, 0.1),
         medium: 4px 4px 8px rgba(0, 0, 0, 0.15),
         large: 0 8px 16px rgba(0, 0, 0, 0.2)
 );
@@ -203,6 +203,9 @@ h1, h2, h3, h4 {
   font-size: get-font-size(heading-lg);
   color: get-color(headings);
   font-weight: 200;
+  text-align: center;
+  line-height: 1;
+  margin-top: get-spacing(10);
 }
 
 h2, h3, h4 {
