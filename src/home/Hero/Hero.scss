@@ -11,6 +11,12 @@
     padding: get-spacing(4) get-spacing(3);
   }
 
+  & button {
+    opacity: 0; // важно!
+    transform: translateY(40px);
+    animation: slideUp 0.8s ease forwards;
+    animation-delay: 0.5s;
+  }
   &__head {
     display: flex;
     justify-content: center;
@@ -22,6 +28,10 @@
     line-height: map-get($line-heights, tight);
     max-width: 1200px;
     padding: 0 get-spacing(4);
+    opacity: 0; // важно!
+    transform: translateY(40px); // чтобы не мигала
+    animation: slideUp 0.8s ease forwards;
+    animation-delay: 0.2s;
 
     @include tablet {
       font-size: get-font-size(heading-md);
@@ -122,13 +132,25 @@
   }
 }
 
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero__item {
+  opacity: 0; // важно!
   animation: fadeInUp 0.8s ease forwards;
 
-  &:nth-child(1) { animation-delay: 0.1s; }
-  &:nth-child(2) { animation-delay: 0.2s; }
-  &:nth-child(3) { animation-delay: 0.3s; }
-  &:nth-child(4) { animation-delay: 0.4s; }
+  &:nth-child(1) { animation-delay: 0.2s; }
+  &:nth-child(2) { animation-delay: 0.4s; }
+  &:nth-child(3) { animation-delay: 0.6s; }
+  &:nth-child(4) { animation-delay: 0.8s; }
 
   @include mobile {
     animation-duration: 0.6s;
