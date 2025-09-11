@@ -6,6 +6,8 @@ import Rest from "@/home/Rest/Rest";
 import ServiceCard from "@/home/serviceCard/serviceCard";
 import About from "@/home/About/About";
 import Prices from "@/home/Prices/Prices";
+import Additional from "@/home/Additional/Additional";
+import Application from "@/home/Application/Application";
 
 function App() {
 
@@ -18,6 +20,8 @@ function App() {
                 <Rest/>
                 <ServiceCard/>
                 <Prices/>
+                <Additional/>
+                <Application/>
             </main>
 
         </>
