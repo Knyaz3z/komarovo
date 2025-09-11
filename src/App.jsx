@@ -9,6 +9,8 @@ import Prices from "@/home/Prices/Prices";
 import Additional from "@/home/Additional/Additional";
 import Application from "@/home/Application/Application";
 import News from "@/home/News/News";
+import Contacts from "@/home/Contacts/Contacts";
+import Footer from "@/layouts/Footer/Footer";
 
 function App() {
 
@@ -24,7 +26,9 @@ function App() {
                 <Additional/>
                 <Application/>
                 <News/>
+                <Contacts/>
             </main>
+            <Footer/>
 
         </>
     )
