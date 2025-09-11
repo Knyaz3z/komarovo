@@ -8,6 +8,7 @@ import About from "@/home/About/About";
 import Prices from "@/home/Prices/Prices";
 import Additional from "@/home/Additional/Additional";
 import Application from "@/home/Application/Application";
+import News from "@/home/News/News";
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
                 <Prices/>
                 <Additional/>
                 <Application/>
+                <News/>
             </main>
 
         </>
